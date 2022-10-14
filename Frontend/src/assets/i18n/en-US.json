@@ -1,0 +1,77 @@
+{
+	"UwCORE": {
+		"WelcomeBack": "Welcome Back",
+		"PoweredBy": "Powered by",
+		"BTN_Loading": "Loading",
+		"SPIN_Loading": "Loading",
+		"Version": "Version",
+		"Notifications": "Notifications",
+		"NoNotifications": "There are no new notifications in the inbox",
+		"SeeAll": "<strong>See all</strong> notifications",
+		"SendNew": "<strong>Send new</strong> notification",
+		"FullName": "Full name",
+		"User": "User",
+		"UserRole": "User Role",
+		"Email": "Email",
+		"LastConnection": "Last Connection",
+		"AccountSettings": "Account Settings",
+		"Logout": "Logout",
+		"ChangePassword" : "Change password",
+		"OldPassword" : "Old password",
+		"NewPassword" : "New password",
+		"RepeatNewPassword" : "Repeat the new password",
+		"OldPasswordWrong" : "The old password is wrong",
+		"ROLEGUARD": {
+			"title": "Not authorized",
+			"info": "You do not have permission to enter this resource / route",
+			"buttonText": "recharge"
+		},
+		"APPACCESSGUARD": {
+			"title": "Not authorized",
+			"info": "You do not have permission to enter this application, please contact the administrator to request access",
+			"buttonText": "recharge"
+		},
+		"401MODAL": {
+			"title": "Session has expired",
+			"info": "For security reasons your session has expired. Please connect again",
+			"buttonText": "accept"
+		}
+	},
+	"GLOBAL": {
+		"Save": "Save",
+		"Cancel": "Cancel",
+		"Yes": "Yes",
+		"PoweredBy": "Powered by",
+		"Wait": "Wait",
+		"Tags": "Tags",
+		"Roles": "Roles",
+		"Users": "Users",
+		"Send": "Send",
+		"Inbox": "Inbox",
+		"Erased": "Erased",
+		"Title": "Title",
+		"Close": "Close",
+		"Sended": "Sended"
+	},
+	"HOME_PAGE": {
+		"Select": "Select",
+		"OneOption": "one option",
+		"SendNew": "<strong>Send new</strong> notification"
+	},
+	"FORM_ERROR": {
+		"FieldRequired": "Este campo es requerido",
+		"MinStringLength": "El mínimo de caracteres permitido es",
+		"MaxStringLength": "El máximo de caracteres permitido es",
+		"InvalidFormatEmail": "El formato del email no es correcto",
+		"PasswordsDoNotMatch": "Las contraseñas no coinciden"
+	},
+	"UwTask": {
+		"Title": "Tasks",
+		"Task_InProgress": "Tasks to finish",
+		"Task_Ready": "Tasks asigned",
+		"Priority_Low": "Low",
+		"Priority_Medium": "Normal",
+		"Priority_Hight": "Hight",
+		"There_Is_Not_Task_For_You_User":"There is not tasks for your user"
+	}
+}

@@ -1,0 +1,21 @@
+<mat-card class="card card-deck"  style="width: 99%;">
+   <!--mat-card-title>
+      <div class="row centrado">
+         <h6 class="encabezado">{{title}}</h6>
+      </div>
+   </mat-card-title>
+   <mat-divider></mat-divider-->
+   <mat-card-content class="">
+
+      <div class="chart-wrapper">
+         <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"
+            [options]="doughnutChartOptions"
+            [legend]="doughnutChartLegend"
+            [colors]="doughnutChartColors">
+          </canvas>
+      </div>
+   </mat-card-content>
+</mat-card>

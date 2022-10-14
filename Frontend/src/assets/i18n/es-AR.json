@@ -1,0 +1,87 @@
+{
+	"UwCORE": {
+		"WelcomeBack": "Bienvenido",
+		"PoweredBy": "Creado por",
+		"BTN_Loading": "Cargando",
+		"SPIN_Loading": "Cargando",
+		"Version": "Versión",
+		"Notifications": "Notificaciones",
+		"NoNotifications": "No hay nuevas notificaciones en Bandeja de entrada",
+		"SeeAll": "<strong>Ver todas</strong> las notificaciones",
+		"SendNew": "<strong>Enviar nueva</strong> notificación",
+		"FullName": "Nombre completo",
+		"User": "Usuario",
+		"UserRole": "Rol de Usuario",
+		"Email": "Email",
+		"LastConnection": "Última Conexión",
+		"AccountSettings": "Configuraciones de Cuenta",
+		"Logout": "Cerrar sesión",
+		"ChangePassword" : "Cambiar contraseña",
+		"OldPassword" : "Contraseña antigua",
+		"NewPassword" : "Nueva contraseña",
+		"RepeatNewPassword" : "Repita la nueva contraseña",
+		"OldPasswordWrong" : "La constraseña antigua es incorrecta",
+		"ROLEGUARD": {
+			"title": "No autorizado",
+			"info": "No tienes permiso para ingresar a este recurso/ruta",
+			"buttonText": "recargar"
+		},
+		"APPACCESSGUARD": {
+			"title": "No autorizado",
+			"info": "No tienes permiso para ingresar a esta aplicacion, por favor comuniquese con el administrador para solicitar acceso",
+			"buttonText": "recargar"
+		},
+		"401MODAL": {
+			"title": "La sesión ha expirado",
+			"info": "Por cuestiones de seguridad su sesión ha expirado. Por favor conéctese nuevamente ",
+			"buttonText": "Entendido"
+		}
+	},
+	"GLOBAL": {		
+		"Yes": "Si",
+		"PoweredBy": "Creado por",
+		"Wait": "Aguarde",
+		"Tags": "Etiquetas",
+		"Roles": "Roles",
+		"Users": "Usuarios",
+		"Send": "Enviar",
+		"Inbox": "Bandeja de entrada",
+		"Erased": "Eliminadas",
+		"Title": "Título",
+		"Close": "Cerrar",
+		"Sended": "Enviadas",
+		"Cancel": "Cancelar",		
+		"Settings": "Ajustes",
+		"Loading": "Cargando",
+		"Applications": "Aplicaciones",		
+		"UserRoles": "Roles de Usuario",
+		"Name": "Nombre",
+		"ShortName": "Nombre Corto",
+		"Description": "Descripción",
+		"SelectFile": "Seleccionar Archivo",
+		"Save": "Guardar",
+		"Edit": "Editar",
+		"Delete": "Borrar"
+	},
+	"HOME_PAGE": {
+		"Select": "Selecciona",
+		"OneOption": "una opción",
+		"SendNew": "<strong>Enviar nueva</strong> notificación"
+	},
+	"FORM_ERROR": {
+		"FieldRequired": "This field is required",
+		"MinStringLength": "The minimum characters allowed is",
+		"MaxStringLength": "The maximum characters allowed is",
+		"InvalidFormatEmail": "Invalid format email",
+		"PasswordsDoNotMatch": "The passwords do not match"
+	},
+	"UwTask": {
+		"Title": "Tareas",
+		"Task_InProgress": "Tareas por finalizar",
+		"Task_Ready": "Tareas asignadas",
+		"Priority_Low": "Baja",
+		"Priority_Medium": "Normal",
+		"Priority_Hight": "Alta",		
+		"There_Is_Not_Task_For_You_User":"No hay tareas para tu usuario"
+	}
+}

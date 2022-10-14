@@ -1,0 +1,11 @@
+<div *ngIf="message" id="alert" class="alert-dismissible fade show" role="alert" [ngClass]="message.cssClass">
+   <!--
+   <span class="nota-al-pie">El mensaje se eliminara en: {{contador}} segundos.</span>
+   <br>
+   -->
+   {{message.text}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+   </button>
+
+</div>

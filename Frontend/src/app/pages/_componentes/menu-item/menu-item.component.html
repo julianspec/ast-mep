@@ -1,0 +1,18 @@
+   <div [ngClass]="status ? 'marcado' : 'desmarcado'">
+      <a mat-list-item [ngStyle]="{'padding-left': (depth * 15) + 'px'}" (click)="onItemSelected(item)"
+      [ngClass]="{'active': item.nombre ? router.isActive(item.ruta, true): false, 'expanded': expanded}"
+      class="item-menu">
+         <i [className]="'fa far fas fad fa-1x px-3 fa-' + item.icono"></i>{{item.nombre}}
+         <span class="spacer"></span>
+         <span fxFlex *ngIf="item.subMenu && item.subMenu.length">
+            <span fxFlex></span>
+            <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+               expand_more
+            </mat-icon>
+         </span>
+      </a>
+   </div>
+
+   <div *ngIf="expanded" class="item-submenu">
+      <menu-item *ngFor="let child of item.subMenu" [item]="child" [depth]="depth+1"></menu-item>
+   </div>

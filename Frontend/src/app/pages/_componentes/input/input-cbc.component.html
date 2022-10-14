@@ -1,0 +1,20 @@
+<div class="form-group row">
+   <div class="tags">
+      {{instruccion.tipoDato}}
+      {{instruccion.tag}}
+
+   </div>
+   <mat-form-field class="col-sm-12">
+      <mat-label>{{instruccion.nombre}}</mat-label>
+      <input OnlyNumber="true" matInput [formControl]="cbc" #input [(ngModel)]="valor" (change)="EnviarValor($event.target.value)" [required]="required">
+      <mat-error *ngIf="cbc.hasError('required')">
+         El {{instruccion.nombre}} es un dato <strong>obligatorio</strong>
+      </mat-error>
+      <mat-error *ngIf="cbc.hasError('minlength')">
+         El campo no cumple con la cantidad mínima de {{instruccion.longitudMinima}} caracteres
+      </mat-error>
+      <mat-error *ngIf="cbc.hasError('maxlength')">
+         El campo no cumple con la cantidad máxima de {{instruccion.longitudMaxima}} caracteres
+      </mat-error>
+   </mat-form-field>
+</div>

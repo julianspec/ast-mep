@@ -1,0 +1,24 @@
+<div class="container align-center">
+
+   <div class="row" >
+      <div class="mx-2 my-1 centrado-vertical" >
+
+         <div class="">
+            <!--img id="profile-img" class="profile-img-card " src="../../../assets/img/avatar_2x.png" /-->
+
+            <div class="circulo" [ngStyle]="{'background-color': color}">
+                <h6>{{ currentUser.usuario.substr(0, 1).toUpperCase() }}</h6>
+             </div>
+
+         </div>
+      </div>
+      <div class="col-sm ">
+            <span id="profile-name" class="text-secondary nombre"><strong>{{currentUser.nombre}}</strong></span>
+            <br>
+            <span class="profile-name-card text-secondary">{{currentUser.sector}}</span>
+            <br>
+            <span class="profile-name-card text-secondary">Perfil: {{currentUser.rolDescripcion}} </span>
+      </div>
+   </div>
+
+</div>

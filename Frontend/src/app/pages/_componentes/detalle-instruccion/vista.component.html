@@ -1,0 +1,6 @@
+<div class="form-group row" *ngFor="let instruccion of transferencia">
+   <mat-form-field class="col-sm-12">
+      <mat-label>{{instruccion.nombre}}</mat-label>
+      <input matInput [readonly]="true" value="{{instruccion.valor}}">
+   </mat-form-field>
+</div>

@@ -1,0 +1,47 @@
+<ng-container >
+   <div class="main-container" [class.is-mobile]="mobileQuery.matches">
+
+      <app-navbar *ngIf="currentUser" (toggleButton)="togglebar();"></app-navbar>
+
+
+      <mat-sidenav-container class="sidenav-container" >
+         <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="true" fixedTopGap="65" class="side-nav" *ngIf="currentUser" [opened]="mobileQuery.matches ? 'false' : 'true'">
+
+            <!--div class="col-sm barralogo" style="float: left; max-width: 250px;">
+               <div class="imagenLogo"></div>
+            </div-->
+            <mat-nav-list class="mt-1">
+               <div class="mt-4 px-1 encabezado"><strong></strong></div>
+               <div *ngFor="let nav of menu">
+                  <!--
+                  <a mat-list-item class="item-menu" [routerLink]="nav.ruta" style="height: 40px;" (click)="mobileQuery.matches ? togglebar() : 'false'">
+                     <i [className]="'fa fa-1x px-3 fa-' + nav.icono"> </i>
+                     {{nav.nombre}}
+                  </a>
+                  -->
+                  <menu-item [item]="nav"></menu-item>
+
+               </div>
+
+
+               <mat-divider></mat-divider>
+               <a mat-list-item class="item-menu" (click)="logout();" style="height: 40px;">
+                  <i class="fa fa-power-off fa-1x px-3" aria-hidden="true"></i>Cerrar sesion
+               </a>
+            </mat-nav-list>
+
+         </mat-sidenav>
+         <mat-sidenav-content>
+
+<!--
+            <button class="botonMenu" (click)="togglebar();" *ngIf="currentUser">
+               <i class="fa fa-bars fa-align-justify fa-1x " aria-hidden="true"></i>
+            </button>
+-->
+            <alert></alert>
+            <ng-content></ng-content>
+
+         </mat-sidenav-content>
+      </mat-sidenav-container>
+   </div>
+</ng-container>

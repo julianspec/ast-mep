@@ -1,0 +1,8 @@
+<div class="alert-dialog">
+	<h1 mat-dialog-title>{{ dialogData.header }}</h1>
+	<div mat-dialog-content>{{ dialogData.message }}</div>
+	<div mat-dialog-actions>
+		<button *ngIf="dialogData.visibleButtonSuccess" mat-button mat-dialog-close>{{ dialogData.buttonSuccessText }}</button>
+		<button *ngIf="dialogData.visibleButtonCancel" mat-button mat-dialog-close>{{ dialogData.buttonCancelText }}</button>
+	</div>
+</div>

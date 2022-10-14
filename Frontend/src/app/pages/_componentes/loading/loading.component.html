@@ -1,0 +1,8 @@
+<div class="float-right mb-2"><span class="btn" (click)="confirmado()"><i class="fa fa-times"></i></span></div>
+<h1 mat-dialog-title>Procesando</h1>
+<div mat-dialog-content>
+   <p>{{mensaje}}</p>
+</div>
+<div>
+   <mat-progress-bar mode="indeterminate" *ngIf="isCompleted"></mat-progress-bar>
+</div>

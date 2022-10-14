@@ -1,0 +1,9 @@
+<!-- prettier-ignore -->
+<uw-top-bar [config]="configTopBar" 
+(closeSession)="closeSession($event)" 
+(clickLogo)="clickLogo($event)"
+(clickOpenUWApps)="clickOpenUWApps($event)"
+(clickNotification)="clickNotification($event)"
+(clickAppConfig)="clickOpenAppsConfig($event)"
+(showMenuChange)="clickMenu()"
+[(showMenu)]="openMenu"></uw-top-bar>

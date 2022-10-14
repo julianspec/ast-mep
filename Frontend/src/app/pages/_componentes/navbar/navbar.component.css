@@ -1,0 +1,76 @@
+.barra{
+   background-color: white;/* #8D8D90; /*#333232;*/
+   background-size: cover;
+   border-color:#E31937;
+   border-width: 5px;
+   vertical-align: middle;
+   box-shadow: 3px 0px 6px rgba(0,0,0,0.16), 3px 0px 6px rgba(0,0,0,0.23);
+   height: 80px;
+}
+.linea-roja{
+   border: 1px solid #E31937;
+   background-color:#E31937;
+   box-shadow: 3px 0px 6px rgba(0,0,0,0.16), 3px 0px 6px rgba(0,0,0,0.23);
+}
+
+.encabezado{
+   background-color:#E31937;
+}
+
+div.mdl-layout__drawer > nav.mdl-navigation > a.mdl-navigation__link {
+   display: inline-flex;
+}
+
+.centrado-vertical{
+   display: flex;
+   align-items: center;
+   vertical-align: bottom;
+}
+
+
+.notificacion-icon{
+   background-color:transparent;
+   color:#5c5c5c;
+}
+
+.fa-bars{
+   transform: scale(1.5);
+}
+
+.notificacion-icon:hover{
+   transform: scale(1.1);
+   color:#5c5c5c;
+}
+
+.badge{
+   scale: scale(0.2);
+}
+
+.notificacion-icon::after {
+   content: '';
+   display: block;
+   width: 0;
+   height: 2px;
+   background: #5c5c5c;
+   transition: width .4s;
+   transform-origin: center;
+}
+
+.notificacion-icon:hover::after {
+   width: 0%; /*100%;*/
+}
+
+.barralogo{
+   background-color: white;
+   /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+}
+
+.imagenLogo{
+   width: auto;
+   height: 65px;
+   margin-left: 15px;
+   margin-top: 0px;
+   /*background: url('../../../assets/img/sprite.png') 0px -150px; /*url('../../../assets/img/sprite.png') 0px -77px;*/
+   transform: scale(0.85);
+   background-repeat: no-repeat;
+}

@@ -1,0 +1,66 @@
+<div class="contenedor">
+   <div class="row">
+      <div class="col-sm-6">
+         <mat-form-field class="row-item grow ">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-6 text-right">
+            <div class="btn-group" role="group">
+               <button id="btnExportar" type="button" class="btn btn-sm btn-volver mr-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-download mr-2"></i>Exportar</button>
+               <div class="dropdown-menu" aria-labelledby="btnExportar">
+                  <a class="dropdown-item" (click)="generatePdf()"><i class="fa fa-file-pdf mr-2"></i>PDF</a>
+               </div>
+            </div>
+            <button type="button" class="btn btn-valores btn-sm" [routerLink]="['/parametria/form']" *appIsGranted="1005">NUEVO PARAMETRO</button>
+      </div>
+   </div>
+
+   <div class="mat-elevation-z2 table tabla-container">
+
+      <table mat-table [dataSource]="dataSource" matSort>
+         <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+            <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="nemonico">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Codigo </th>
+            <td mat-cell *matCellDef="let row"> {{row.nemonico | uppercase}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </th>
+            <td mat-cell *matCellDef="let row"> {{row.descripcion | uppercase}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de Valor </th>
+            <td mat-cell *matCellDef="let row"> {{row.tipo}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Valor </th>
+            <td mat-cell *matCellDef="let row"> {{row.valor}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Acción </th>
+            <td mat-cell *matCellDef="let row">
+               <span class="mr-2" (click)="Editar(row)" data-toggle="tooltip" data-placement="bottom" title="Editar" *appIsGranted="1006">
+                  <i class="fa fa-pencil-alt modify"></i>
+               </span>
+               <span class="mx-2" (click)="Eliminar(row)" data-toggle="tooltip" data-placement="bottom" title="Eliminar" *appIsGranted="1007">
+                  <i class="fa fa-trash borrar"></i>
+               </span>
+            </td>
+         </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+   </div>
+</div>

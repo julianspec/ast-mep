@@ -1,0 +1,46 @@
+.flex-snackBar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(100% + 32px);
+	width: calc(100% - 32px);
+	margin: -16px 0px -16px -5px;
+	padding: 10px 10px 10px 10px;
+	border: 2px solid white;
+	border-radius: 0px;
+}
+
+.dismiss {
+	position: absolute;
+	right: 10px;
+}
+
+.SNACK_ERROR {
+	.flex-snackBar {
+		background: #f8d7da;
+		border-color: #f5c6cb;
+	}
+	.data {
+		color: #721c24;
+		font-size: 14px;
+		font-weight: 500;
+	}
+}
+
+.SNACK_SUCCESS {
+	.flex-snackBar {
+		background: #d4edda;
+		border-color: #c3e6cb;
+	}
+	.data {
+		color: #155724;
+		font-size: 14px;
+		font-weight: 500;
+	}
+}
+
+/*SNACKBAR*/
+
+.main-theme .mat-snack-bar-container {
+	margin: 56px 30px 56px 56px !important;
+}

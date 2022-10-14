@@ -1,0 +1,44 @@
+<div class="row" >
+   <!-- SE OCULTA POR EL MOMENTO
+   <span class="btn notificacion-icon">
+      <span class="badge badge-pill badge-danger">4</span>
+      <i class="fa fa-bell-o fa-1x mr-2 mt-2" aria-hidden="true"></i> <i class="dropdown-toggle"  aria-hidden="true"></i>
+   </span>
+   -->
+   <div class="dropdown mr-3">
+      <span class="btn notificacion-icon" data-toggle="dropdown" id="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+         <div class="circulo-sm" [ngStyle]="{'background-color': color}">
+            <h6>{{ currentUser.usuario.substr(0, 1).toUpperCase() }}</h6>
+         </div>
+         <!--i class="fa fa-users fa-1x mr-2" aria-hidden="true"></i-->
+      </span>
+      <div class="dropdown-menu dropdown-menu-right" style="width: 350px;">
+
+         <span class="dropdown-header text-center encabezado"><strong>MI PERFIL</strong></span>
+         <div class="dropdown-divider"></div>
+
+         <p class="dropdown-item" ><app-userinfosm [UserColor]="color"></app-userinfosm></p>
+
+         <div class="dropdown-divider"></div>
+
+         <div class="text-center">
+            <span class="btn btn-sm btn-valores " style="font-size: small;" (click)="logout();"><i class="fa fa-power-off fa-1x px-1" aria-hidden="true"></i>CERRAR SESION</span>
+         </div>
+
+      </div>
+   </div>
+<!--
+   <div class="dropdown mr-3">
+      <span class="btn notificacion-icon" data-toggle="dropdown" id="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+         <i class="fa fa-ellipsis-v mr-2"></i>
+      </span>
+      <div class="dropdown-menu dropdown-menu-right" style="width: 350px;">
+
+         <p class="dropdown-item" (click)="logout()"><app-status-automatica></app-status-automatica></p>
+
+         <div class="dropdown-divider"></div>
+
+      </div>
+   </div>
+-->
+</div>

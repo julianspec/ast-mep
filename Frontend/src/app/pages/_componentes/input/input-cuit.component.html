@@ -1,0 +1,22 @@
+<div class="form-group row">
+   <div class="tags">
+      {{instruccion.tipoDato}}
+      {{instruccion.tag}}
+   </div>
+   <mat-form-field class="col-sm-12">
+      <mat-label>{{instruccion.nombre}}</mat-label>
+      <input OnlyNumber="true" matInput [formControl]="cuit" [(ngModel)]="valor" #input (change)="EnviarValor()" [required]="requerido">
+      <mat-error *ngIf="cuit.hasError('required')">
+         El {{instruccion.nombre}} es un dato <strong>obligatorio</strong>
+      </mat-error>
+      <mat-error *ngIf="cuit.hasError('minlength')">
+         El campo no cumple con la cantidad mínima de {{instruccion.longitudMinima}} caracteres
+      </mat-error>
+      <mat-error *ngIf="cuit.hasError('maxlength')">
+         El campo no cumple con la cantidad máxima de {{instruccion.longitudMaxima}} caracteres
+      </mat-error>
+      <mat-error *ngIf="cuit.hasError('cuitValidator')">
+         El CUIT/CUIL ingresado es <strong>inválido</strong>
+      </mat-error>
+   </mat-form-field>
+</div>

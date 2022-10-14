@@ -1,0 +1,119 @@
+@import '../../../styles/vars';
+@import '../../../styles/animations.scss';
+
+:host {
+	display: flex;
+	align-items: stretch;
+	justify-content: stretch;
+	flex-direction: column;
+	background: var(--main_background);
+}
+
+.top-bar {
+	background: var(--uw_topbar_bg);
+	width: 100%;
+	height: $top-bar-height;
+	z-index: 500000;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	color: var(--uw_topbar_text);
+	position: fixed;
+	top: 0;
+	.app-topbar {
+		width: 100%;
+	}
+}
+
+.router-container {
+	margin: $top-bar-height 0 $botom-bar-height 0;
+	min-height: calc(100vh - (#{$top-bar-height} + #{$botom-bar-height}));
+	display: flex;
+}
+
+.footer-bar {
+	position: fixed;
+	height: $botom-bar-height;
+	width: 100%;
+	background: var(--uw_footerbar_bg);
+	z-index: 10;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row;
+	font-size: 12px;
+	color: var(--uw_footerbar_text);
+}
+
+.nav-mainmenu-asaidecontent {
+	opacity: 0;
+	width: 0;
+	min-width: 0;
+	max-width: 0;
+	pointer-events: none;
+	@include transitionCustom(0.3s, ease-in-out);
+}
+
+.nav-mainmenu {
+	position: fixed;
+	pointer-events: none;
+	.application-menu {
+		left: calc((var(--uw-menu-width) + 20px) * -1);
+		pointer-events: none;
+		opacity: 0;
+		@include transitionCustom(0s, ease-in-out);
+	}
+	.div-menu-bg {
+		opacity: 0;
+		left: 0px;
+		@include transitionCustom(0.2s, ease-in-out);
+	}
+}
+
+.nav-mainmenu-asaidecontent.active {
+	height: 100%;
+	width: var(--uw-menu-width);
+	min-width: var(--uw-menu-width);
+	max-width: var(--uw-menu-width);
+}
+
+.nav-mainmenu.active {
+	float: left;
+	z-index: 600000;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	.div-menu-bg {
+		height: 100vh;
+		width: 100%;
+		background: #626262cc;
+		display: block;
+		position: fixed;
+		z-index: 600000;
+		opacity: 1;
+		pointer-events: all;
+		@include transitionCustom(0.2s, ease-in-out);
+	}
+	.application-menu {
+		left: 0px;
+		position: fixed;
+		height: 100vh;
+		width: var(--uw-menu-width);
+
+		z-index: 600000;
+		pointer-events: all;
+		opacity: 1;
+		overflow: auto;
+		@include transitionCustom(0.3s, ease-in-out);
+	}
+}
+
+@media (max-width: 950px) {
+	.footer-bar {
+		justify-content: center;
+	}
+}

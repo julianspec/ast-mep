@@ -1,0 +1,30 @@
+:host {
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-start;
+	flex-direction: column;
+	background: white;
+}
+
+.customBtn {
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+::ng-deep #example-form-valid app-page-header {
+   .header-content {
+      & > div {
+         padding: 0 20px;
+         border-left: 2px solid #00000030;
+      }
+   }
+
+   h3 {
+      font-size: 14px;
+      color: var(--text-gray-color);
+   }
+}

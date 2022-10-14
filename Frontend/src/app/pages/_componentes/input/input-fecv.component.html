@@ -1,0 +1,24 @@
+<div class="row">
+   <div class="col-sm-6">
+      <div class="tags">
+         {{instruccion.tipoDato}}
+         {{instruccion.tag}}
+      </div>
+      <mat-form-field>
+         <mat-label>{{instruccion.nombre}}</mat-label>
+         <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" [formControl]="fecv" #input (dateInput)="EnviarValor($event.target.value)" [required]="requerido"> <!--[formControl]="date" (dateInput)="onFechaIniChange($event.value)">-->
+         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker></mat-datepicker>
+         <mat-error *ngIf="fecv.hasError('required')">
+            El {{instruccion.nombre}} es un dato <strong>obligatorio</strong>
+         </mat-error>
+         <mat-error *ngIf="fecv.hasError('minlength')">
+            El campo no cumple con la cantidad mínima de {{instruccion.longitudMinima}} caracteres
+         </mat-error>
+         <mat-error *ngIf="fecv.hasError('maxlength')">
+            El campo no cumple con la cantidad máxima de {{instruccion.longitudMaxima}} caracteres
+         </mat-error>
+      </mat-form-field>
+
+   </div>
+</div>

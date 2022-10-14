@@ -1,0 +1,11 @@
+@import '../../../styles/vars.scss';
+@import '../../../styles/animations.scss';
+
+.uw-footerbar {
+	background: var(--uw_footerbar_bg);
+}
+
+.uw-footerbar button figure {
+	background: url('./../../../assets/SVG/accusys-icon.svg') no-repeat center;
+	mask: url('./../../../assets/SVG/accusys-icon.svg') no-repeat center;
+}

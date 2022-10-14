@@ -1,0 +1,179 @@
+*{
+   margin:0;
+}
+
+.spacer {
+   flex: 1 1 auto;
+}
+
+.main-container {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   top: 0px;
+   bottom: 0px;
+   left: 0px;
+   right: 0px;
+ }
+
+ .is-mobile{
+   position: fixed;
+   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+   z-index: 2;
+ }
+
+.sidenav-container{
+   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+   flex: 1;
+}
+
+.mat-sidenav-content{
+   background-color:  #ffffff;
+}
+
+is-mobile .sidenav-container {
+   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+      `<body>` to be our scrolling element for mobile layouts. */
+   flex: 1 0 auto;
+}
+
+.page-container {
+   margin-left: 30px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   margin-right: 30px;
+ }
+
+.side-nav{
+   width: 250px;
+   background-color: #FFFFFF;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.contenedor{
+   width:90px;
+   height:240px;
+   position:absolute;
+   right:0px;
+   bottom:0px;
+}
+
+.botonMenu{
+   width:40px;
+   height:40px;
+   border-radius:100%;
+   background:#E31937;
+   right:0;
+   bottom:0;
+   position:absolute;
+   margin-right:40px;
+   margin-left: 30px;
+   margin-bottom:40px;
+   border:none;
+   outline:none;
+   color:#FFFFFF;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   transition:.3s;
+}
+
+.item-menu:hover{
+   background-color:#E31937;
+   color: #FFFFFF;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   transform: scale(1.02);
+}
+
+.item-submenu{
+   background-color: #fdfdfdef;
+}
+
+.botonMenu:hover{
+   transform:rotate(180deg);
+}
+
+.menu-expand:active{
+   -webkit-transform: rotate(180deg);
+   -moz-transform: rotate(180deg);
+   -ms-transform: rotate(180deg);
+   -o-transform: rotate(180deg);
+   transform: rotate(180deg);
+   color: #E31937;
+}
+
+.active{
+   border-left: 4px solid #E31937;
+   background-color: #e3193713;
+}
+
+.subitem{
+   background-color: darkgrey;
+}
+
+.menu-expand{
+   -webkit-transition-property: -webkit-transform;
+   -moz-transition-property: -moz-transform;
+   -ms-transition-property: -ms-transform;
+   -o-transition-property: -o-transform;
+   transition-property: transform;
+   color: #E31937;
+}
+
+.botonMenu:active{
+   transform:scale(1.1);
+}
+
+.animacionVer{
+   transform:scale(1);
+}
+
+.mat-sidenav{
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.mat-sidenav-content,.jumbotron{
+   background:#F5F5F5;
+}
+
+.profile-img-card {
+   width: 50px;
+   height: 50px;
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+   margin: 0 auto; /* requerido para alineación horizontal */
+}
+
+.profile-img-status {
+   width: 58px;
+   height: 58px;
+   background-color: rgb(29, 168, 59);
+   margin: 0 auto 10px;
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.mat-divider{
+   color:#E5E5E5;
+}
+
+.barralogo{
+   background-color: white;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.imagenLogo{
+   width: auto;
+   height: 65px;
+   margin-left: 25px;
+   /*background: url('../../../assets/img/sprite.png') 0px -150px; /*url('../../../assets/img/sprite.png') 0px -77px;*/
+   transform: scale(0.7);
+   background-repeat: no-repeat;
+
+}

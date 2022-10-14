@@ -1,0 +1,7 @@
+<div class="first-load" *ngIf="showInitLoad">
+	<mat-spinner strokeWidth="3" diameter="30"></mat-spinner>
+	<p>Loading</p>
+</div>
+<div class="router-container">
+	<router-outlet (activate)="onRouterOutletActivate($event)"></router-outlet>
+</div>

@@ -1,0 +1,49 @@
+.notificacion:hover{
+   color:#5c5c5c;
+   cursor:pointer;
+}
+
+.notificacion-icon{
+   background-color:transparent;
+   color:#5c5c5c;
+}
+
+.notificacion-icon:hover{
+   transform: scale(1.1);
+   color:#5c5c5c;
+}
+
+.badge{
+   transform: scale(0.8);
+}
+
+.fa-bell-o{
+   transform: scale(1.5);
+}
+
+.fa-ellipsis-v{
+   margin-top: 7px;
+   transform: scale(1.5);
+}
+
+.herramientas:hover{
+   width: 50px;
+	height: 50px;
+	border-radius: 50%;
+   color:#5c5c5c;
+   cursor:pointer;
+}
+
+.notificacion-icon::after {
+   content: '';
+   display: block;
+   width: 0;
+   height: 2px;
+   background: #5c5c5c;
+   transition: width .4s;
+   transform-origin: center;
+}
+
+.notificacion-icon:hover::after {
+   width: 0%; /*100%;*/
+}

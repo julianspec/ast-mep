@@ -1,0 +1,19 @@
+<div class="form-group row">
+   <mat-form-field class="col-sm-12">
+      <div class="tags">
+         {{instruccion.tipoDato}}
+         {{instruccion.tag}}
+      </div>
+      <mat-label>{{instruccion.nombre}}</mat-label>
+      <input matInput [formControl]="sml" #input (change)="EnviarValor($event.target.value)" [required]="requerido">
+      <mat-error *ngIf="sml.hasError('required')">
+         El {{instruccion.nombre}} es un dato <strong>obligatorio</strong>
+      </mat-error>
+      <mat-error *ngIf="sml.hasError('minlength')">
+         El campo no cumple con la cantidad mínima de {{instruccion.longitudMinima}} caracteres
+      </mat-error>
+      <mat-error *ngIf="sml.hasError('maxlength')">
+         El campo no cumple con la cantidad máxima de {{instruccion.longitudMaxima}} caracteres
+      </mat-error>
+   </mat-form-field>
+</div>

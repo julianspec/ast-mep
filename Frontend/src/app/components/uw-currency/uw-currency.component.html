@@ -1,0 +1,3 @@
+<p class="uw-currency">
+	{{ prefix }} {{ integerPart | currency: currencyCode:symbol:'0.0-0':lang }}<span *ngIf="showDecimal"> {{ decimalPart | currency: currencyCode:'':'2.0-0':lang }}</span>
+</p>

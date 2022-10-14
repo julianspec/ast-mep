@@ -1,0 +1,41 @@
+.circulo-status {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #00c8fd;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	text-align: center;
+   margin:0px auto;
+   padding:3%;
+   box-shadow: 2px 2px 3px rgba(185, 177, 177, 0.521), 2px 2px 3px rgba(185, 177, 177, 0.521);
+
+   border-color: rgba(245, 245, 245, 0.514);
+	border-width: 1.5px;
+	border-style: solid;
+}
+
+.profile-img-status {
+   width: 15px;
+   height: 15px;
+   background-color: #689F38;
+   margin: 0 auto 10px;
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+}
+
+span{
+   font-size: small;
+}
+
+.centrado-vertical{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   vertical-align: bottom;
+}

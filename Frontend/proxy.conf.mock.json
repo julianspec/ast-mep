@@ -1,0 +1,18 @@
+{
+	"/apimanager/*": {
+		"target": "http://localhost:3104/",
+		"secure": false,
+		"logLevel": "debug",
+		"pathRewrite": {
+			"^/apimanager": ""
+		}
+	},
+	"/apinotification/*": {
+		"target": "http://localhost:3103/",
+		"secure": false,
+		"logLevel": "debug",
+		"pathRewrite": {
+			"^/apinotification": ""
+		}
+	}
+}

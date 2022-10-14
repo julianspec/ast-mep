@@ -1,0 +1,15 @@
+.uw-refresh-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	background: #006bff;
+	color: white;
+	outline: none;
+	height: 100%;
+	width: 100%;
+}
+
+.uw-refresh-button:disabled {
+	background: transparent;
+}

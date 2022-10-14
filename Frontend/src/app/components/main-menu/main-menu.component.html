@@ -1,0 +1,41 @@
+<nav class="main-menu">
+	<div class="menu-title">Menu</div>
+	<hr />
+	<div class="menu-loading" *ngIf="loading">
+		<mat-spinner diameter="20"></mat-spinner>
+	</div>
+	<mat-nav-list class="main-menu-nav-list">
+		<span *ngFor="let item of menu">
+			<div *ngIf="item.visibile">
+				<span *ngIf="!item.children || item.children.items.length === 0">
+					<hr *ngIf="item.separator_Top" />
+					<mat-list-item>
+						<app-menu-item [item]="item"></app-menu-item>
+					</mat-list-item>
+					<hr *ngIf="item.separator_Bottom" />
+				</span>
+				<span *ngIf="item.children && item.children.items.length > 0">
+					<mat-accordion>
+						<mat-expansion-panel [ngClass]="{ brd_top: item.separator_Top, brd_bottom: item.separator_Bottom }" [expanded]="item.children.expanded">
+							<mat-expansion-panel-header>
+								<mat-panel-title>
+									<app-menu-item [item]="item"></app-menu-item>
+								</mat-panel-title>
+							</mat-expansion-panel-header>
+							<span *ngFor="let child of item.children.items">
+								<mat-list-item>
+									<!-- Entradas de cada submenú  -->
+									<app-menu-item [item]="child"></app-menu-item>
+								</mat-list-item>
+							</span>
+						</mat-expansion-panel>
+					</mat-accordion>
+				</span>
+			</div>
+		</span>
+	</mat-nav-list>
+</nav>
+
+<div class="uniweb-logo">
+	<figure class="uniweb-svg"></figure>
+</div>

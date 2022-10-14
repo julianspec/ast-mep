@@ -1,0 +1,6 @@
+<div class="not_access_app_container">
+	<uw-error class="uw-error" (onButtonClick)="onButtonClick($event)" [errorParams]="params"></uw-error>
+	<div class="not-access-close-session">
+		<button (click)="onCloseSession()">{{ 'UwCORE.Logout' | translate }}</button>
+	</div>
+</div>

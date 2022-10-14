@@ -1,0 +1,109 @@
+{
+	"cSpell.enabled": false,
+
+	//---Editor Configuration
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": false,
+	"editor.renameOnType": true,
+	"editor.detectIndentation": false,
+	"editor.tabSize": 3,
+	//--Pretier
+	"prettier.configPath": ".vscode/.prettierrc",
+
+	//---TreeView Configuration
+	"workbench.tree.indent": 20,
+
+	//---ToDo Tree Configuration
+	"todo-tree.highlights.defaultHighlight": {
+		"icon": "alert",
+		"type": "text",
+		"foreground": "red",
+		"background": "white",
+		"opacity": 80,
+		"iconColour": "red"
+	},
+	"todo-tree.general.tagGroups": {
+		"FIXME": ["FIXME", "FIXIT", "FIX"],
+		"FIXED": ["FIXED"]
+	},
+
+	"todo-tree.highlights.customHighlight": {
+		"TODO": {
+			"gutterIcon": true,
+			"icon": "alert",
+			"type": "text",
+			"foreground": "black",
+			"background": "#ffb732",
+			"opacity": 90,
+			"iconColour": "#ffb732"
+		},
+
+		"BUG": {
+			"iconColour": "#e91543",
+			"foreground": "#e2e2e2",
+			"background": "#e91543",
+			"opacity": 90,
+			"gutterIcon": true
+		},
+		"FIXME": {
+			"iconColour": "#ff8928",
+			"foreground": "black",
+			"background": "#ff8928",
+			"opacity": 60,
+			"gutterIcon": true
+		}
+	},
+
+	//---Angular-Node File exlude (not used) (true-EXCLUDE/false-INCLUDE)
+	"files.exclude": {
+		"**/node_modules": false,
+		"**/e2e": false,
+		"**/dist*": false,
+		"**/.gitignore": false,
+		"**/.gitkeep": false,
+		"**/*.spec.ts": false,
+		"**/*.map": false,
+		"**/src/test.ts": false,
+		"**/karma.conf.js": false,
+		"**/polyfills.ts": false,
+		"**/.editorconfig": false,
+		"**/browserslist": false,
+		"**/angular.json": false,
+		"**/package.json": false,
+		"**/package-lock.json": false,
+		"**/tsconfig.app.json": false,
+		"**/tsconfig.spec.json": false,
+		"**/tsconfig.json": false,
+		"**/tslint.json": false
+	},
+	//---HTML CSS Support (Extension)
+	"css.fileExtensions": ["scss"],
+
+	/*
+	"css.remoteStyleSheets": [
+		"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+	],
+	*/
+
+	"vsicons.presets.angular": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"turboConsoleLog.logMessagePrefix": "OUTPUT",
+	"breadcrumbs.enabled": true,
+	"editor.renderControlCharacters": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.highlightActiveIndentGuide": false,
+	"bracket-pair-colorizer-2.colors": ["Gold", "#a88332", "Gold"],
+
+	"indentRainbow.colors": ["rgba(0,0,0,0)", "rgba(0,0,0,0.2)", "rgba(0,0,0,0.5)", "rgba(0,0,0,0.8)"],
+
+	"indentRainbow.errorColor": "rgba(128,32,32,0.6)",
+
+	"indentRainbow.tabmixColor": "rgba(128,32,96,0.6)"
+
+	//---Git Configuration (Comment lines below if you wont tu see change in treeview, and enable git)
+	/*
+   "git.enabled": false,
+   "git.path": null,
+	"git.autofetch": false,
+   */
+}

@@ -1,0 +1,60 @@
+<div class="contenedor px-3">
+   <div class="row">
+      <div class="col-sm-6">
+         <mat-form-field class="row-item grow">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 text-right">
+         <div class="btn-group" role="group">
+            <button id="btnExportar" type="button" class="btn btn-sm btn-volver mr-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-download mr-2"></i>Exportar</button>
+            <div class="dropdown-menu" aria-labelledby="btnExportar">
+               <a class="dropdown-item" (click)="generatePdf()"><i class="fa fa-file-pdf mr-2"></i>PDF</a>
+            </div>
+         </div>
+         <button type="button" class="btn btn-valores btn-sm" [routerLink]="['/reserva/form']" *appIsGranted="1013">NUEVA RESERVA</button>
+      </div>
+
+   </div>
+
+   <div class="mat-elevation-z2 table tabla-container">
+
+
+      <table mat-table [dataSource]="dataSource" matSort>
+
+         <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+            <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="cuenta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Cuenta </th>
+            <td mat-cell *matCellDef="let row"> {{ row.cuenta }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="monto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto Reservado </th>
+            <td mat-cell *matCellDef="let row"> {{row.monto.toString().trim().replace(",",".") | currency:'USD': (row.cuenta=='80198'? 'u$s': '$') + ' ' }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="usuario">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Usuario Alta </th>
+            <td mat-cell *matCellDef="let row"> {{row.usuario}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Acción </th>
+            <td mat-cell *matCellDef="let row">
+               <span class="mx-1" (click)="Eliminar(row.id)" data-toggle="tooltip" data-placement="bottom" title="Eliminar" *appIsGranted="1014" style="cursor:pointer">
+                  <i class="fa fa-trash text-danger"></i>
+               </span>
+            </td>
+         </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+   </div>
+</div>

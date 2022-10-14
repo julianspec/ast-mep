@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Instruccion de Pago</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content class="mt-3">
+   <vista-instruccion [values]="transferencia"></vista-instruccion>
+</div>
+<div mat-dialog-actions class="float-right">
+   <button mat-button (click)="confirmado()" mat-raised-button color="warn">Aceptar</button>
+</div>

@@ -1,0 +1,123 @@
+app-main-menu {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: var(--uw-menu-bg);
+
+	.main-menu-nav-list,
+	.main-menu-nav-list .mat-list-item .mat-list-item-content,
+	.main-menu-nav-list .mat-list-option .mat-list-item-content {
+		padding: 0;
+	}
+	.main-menu-nav-list .mat-accordion .mat-expansion-panel {
+		border-radius: 0;
+		box-shadow: none;
+		background: var(--uw-menu-bg);
+		padding: 0;
+		margin: 0;
+	}
+
+	.main-menu-nav-list .mat-expansion-panel-header,
+	.main-menu-nav-list .mat-list-item,
+	.main-menu-nav-list .mat-list-option {
+		height: auto !important;
+	}
+
+	.main-menu-nav-list .mat-expansion-panel-header {
+		padding: 0 18px 0 0px;
+		background: var(--uw-menu-item-expander-bg);
+		.menu_btn {
+			background: var(--uw-menu-item-expander-bg);
+			color: var(--uw-menu-item-expander-text);
+		}
+
+		.mat-expansion-indicator::after {
+			color: var(--uw-menu-item-expander-icon);
+		}
+	}
+	.main-menu-nav-list .mat-expansion-panel-header:hover,
+	.main-menu-nav-list .mat-expansion-panel-header:focus {
+		background: var(--uw-menu-item-expander-bg-hover);
+		.menu_btn {
+			background: var(--uw-menu-item-expander-bg-hover);
+			color: var(--uw-menu-item-expander-text-hover);
+		}
+
+		.mat-expansion-indicator::after {
+			color: var(--uw-menu-item-expander-icon-hover);
+		}
+	}
+
+	.main-menu-nav-list .mat-expansion-panel-header .mat-expansion-indicator {
+		margin-top: -4px;
+	}
+
+	.main-menu-nav-list .mat-expansion-panel-header.mat-expanded .mat-expansion-indicator {
+		margin-top: 5px;
+	}
+
+	.main-menu-nav-list .mat-expansion-panel-body {
+		padding: 0 20px 5px;
+	}
+
+	.uniweb-svg {
+		mask: url('./../../../assets/SVG/uniweb-logo-full-h.svg') no-repeat center;
+	}
+
+	.menu-loading {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		.mat-progress-spinner circle,
+		.main-theme .mat-spinner circle {
+			stroke: var(--uw-menu-loader);
+		}
+	}
+
+	.main-menu {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: stretch;
+		padding: 15px;
+
+		hr {
+			width: 100%;
+			background: var(--uw-menu-separator);
+			border: none;
+			height: 1px;
+			padding: 0;
+			margin: 0;
+		}
+
+		.menu-title {
+			padding: 10px;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			text-align: center;
+			box-sizing: border-box;
+			padding-bottom: 20px;
+			font-size: 16px;
+			color: var(--uw-menu-title);
+		}
+	}
+
+	.uniweb-logo {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		figure {
+			background: var(--uw-menu-logo-color); //#b4b4b4;
+			height: 120px;
+			width: 80px;
+			opacity: 1;
+		}
+	}
+}

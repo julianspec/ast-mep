@@ -1,0 +1,34 @@
+{
+	"/apimanager/*": {
+		"target": "https://172.28.194.196:8243/service.manager/1.0",
+		"secure": false,
+		"logLevel": "debug",
+		"pathRewrite": {
+			"^/apimanager": ""
+		}
+	},
+	"/apinotification/*": {
+		"target": "https://172.28.194.196:8243/service.manager/1.0",
+		"secure": false,
+		"logLevel": "debug",
+		"pathRewrite": {
+			"^/apinotification": ""
+		}
+	},
+	"/otherapi/*": {
+		"target": "https://172.28.194.196:8243/service._APISERVICE_",
+		"secure": false,
+		"logLevel": "debug",
+		"pathRewrite": {
+			"^/api": ""
+		}
+	},	
+	"/apijbpm": {
+		"target": "https://172.28.194.196:8243/jbpm.service/1.0",
+		"secure": false,
+		"logLevel": "debug",
+		"pathRewrite": {
+			"^/apijbpm": ""
+		}
+	}
+}

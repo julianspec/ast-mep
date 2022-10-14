@@ -1,0 +1,14 @@
+<button
+	class="uw-refresh-button"
+	[disabled]="loading"
+	[style.border-radius]="radius"
+	(click)="onClick($event)"
+	[matTooltip]="matTooltip"
+	matRipple
+	[matRippleCentered]="true"
+	[matRippleDisabled]="false"
+	[matRippleUnbounded]="false"
+>
+	<mat-icon *ngIf="!loading">refresh</mat-icon>
+	<uw-spinner *ngIf="loading" [style]="1" size="2px"></uw-spinner>
+</button>

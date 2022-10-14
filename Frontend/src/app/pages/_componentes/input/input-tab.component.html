@@ -1,0 +1,23 @@
+
+<div class="form-group row">
+   <div class="tags">
+      {{instruccion.tipoDato}}
+      {{instruccion.tag}}
+   </div>
+   <mat-form-field class="col-sm-6">
+      <mat-label>{{instruccion.nombre}}</mat-label>
+      <mat-select #cmb (selectionChange)="ItemElegido(cmb.value);" [formControl]="tab" [required]="requerido">
+         <mat-option></mat-option>
+         <mat-option *ngFor="let codigo of _datos " [value]="codigo">{{codigo.codigo + ' - ' + codigo.contenido}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="tab.hasError('required')">
+         El {{instruccion.nombre}} es un dato <strong>obligatorio</strong>
+      </mat-error>
+      <mat-error *ngIf="tab.hasError('minlength')">
+         El campo no cumple con la cantidad mínima de {{instruccion.longitudMinima}} caracteres
+      </mat-error>
+      <mat-error *ngIf="tab.hasError('maxlength')">
+         El campo no cumple con la cantidad máxima de {{instruccion.longitudMaxima}} caracteres
+      </mat-error>
+   </mat-form-field>
+</div>

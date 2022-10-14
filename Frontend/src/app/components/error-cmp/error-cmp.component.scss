@@ -1,0 +1,41 @@
+app-error-cmp {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.error_cmp_container .uw-error h1,
+.error_cmp_container .uw-error h2,
+.error_cmp_container .uw-error h3 {
+	color: black !important;
+}
+
+.error_cmp_container .uw-error .uw-error-content .uw-error-info h2 {
+	min-width: 280px !important;
+}
+
+.error_cmp_container .uw-error .uw-error-content .uw-error-code .uw-error-svg-notfound figure {
+	mask: url('../../../assets/SVG/notAccess.svg') no-repeat center;
+	background-color: black !important;
+}
+.error_cmp_container .uw-error .uw-error-content .uw-error-code .uw-error-svg-notfound {
+	background: transparent !important;
+}
+
+.error_cmp_container .uw-error .uw-error-content .uw-error-link {
+	color: black !important;
+}
+
+.error_cmp_container .uw-error .uw-error-title h2 {
+	margin: 20px !important;
+}
+
+.error_cmp_container .uw-error,
+.error-cmp-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

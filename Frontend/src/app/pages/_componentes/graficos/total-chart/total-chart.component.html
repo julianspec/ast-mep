@@ -1,0 +1,28 @@
+<mat-card class="card card-deck" style="width: 99%;"
+   [ngClass]="{'error': color === 'error',
+               'reparacion': color === 'reparacion',
+               'transmitida': color === 'transmitida',
+               'envio': color === 'envio',
+               'aprobacion': color === 'aprobacion',
+               'rechazada': color === 'rechazada'}">
+   <mat-card-content class="">
+      <div class="row align-items-center justify-content-center mt-2">
+         <div  class="spinner-border "
+               [ngClass]="{'spinner-error': color === 'error',
+                           'spinner-reparacion': color === 'reparacion',
+                           'spinner-transmitida': color === 'transmitida',
+                           'spinner-envio': color === 'envio',
+                           'spinner-aprobacion': color === 'aprobacion',
+                           'spinner-rechazada': color === 'rechazada'}"
+               role="status"
+               *ngIf="loading">
+            <span class="sr-only">Loading...</span>
+         </div>
+         <h3 class="text-dark" *ngIf="!loading && simbolo.length==0">{{ cantidad }}</h3>
+         <h3 class="text-dark" *ngIf="!loading && simbolo.length>0" >{{ cantidad.toString().trim().replace(",",".") |  currency:"USD":simbolo+' '  }}</h3>
+      </div>
+      <div class="row align-items-center justify-content-center mb-2">
+         <h6 class="text-muted text-center">{{title}}</h6>
+      </div>
+   </mat-card-content>
+</mat-card>

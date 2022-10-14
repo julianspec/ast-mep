@@ -1,0 +1,34 @@
+
+<div class="form-group row" >
+   <mat-form-field class="col-sm-12">
+      <div class="tags">
+         {{instruccion.tipoDato}}
+         {{instruccion.tag}}
+      </div>
+      <mat-label>{{instruccion.nombre}}</mat-label>
+      <input matInput
+         OnlyNumber="true"
+         type="text"
+         [ngModel]="importe | currency:'USD':(monedaImporte==''? '$':monedaImporte)"
+         [ngModelOptions]="{updateOn:'blur'}"
+         (ngModelChange)="importe=$event"
+         (blur)="EnviarValor(importe);"
+         [required]="requerido"
+         (focusin)="this.select($event)">
+
+      <input type="number" [customMin]="this.instruccion.valorMinimo"  [customMax]="this.instruccion.valorMaximo" [ngModel]="importe" [formControl]="txt" hidden="hidden">
+
+      <mat-error *ngIf="txt.hasError('required')" >
+         El {{instruccion.nombre}} es un dato <strong>obligatorio</strong>
+      </mat-error>
+      <!--mat-error *ngIf="txt.errors?.customMin">
+         El monto debe ser superior a {{this.instruccion.valorMinimo}}
+      </mat-error>
+      <mat-error *ngIf="txt.errors?.customMax">
+         El monto debe ser inferior a {{this.instruccion.valorMaximo}}
+      </mat-error-->
+   </mat-form-field>
+   <span class="errorhint" *ngIf="importe <=  min"> El monto debe ser superior a <strong>{{this.instruccion.valorMinimo | currency:'USD':(monedaImporte==''? '$':monedaImporte)}}</strong></span>
+   <span class="errorhint" *ngIf="importe >  max"> El monto excede el saldo de la cuenta de <strong>{{this.instruccion.valorMaximo | currency:'USD':(monedaImporte==''? '$':monedaImporte)}}</strong></span>
+
+   </div>

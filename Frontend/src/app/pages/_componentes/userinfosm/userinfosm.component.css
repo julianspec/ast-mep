@@ -1,0 +1,33 @@
+
+.profile-img-card {
+   width: 50px;
+   height: 50px;
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+   margin: 0 auto; /* requerido para alineación horizontal */
+}
+
+.profile-img-status {
+   width: 35px;
+   height: 35px;
+   background-color: #689F38;
+   margin: 0 auto 10px;
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+}
+
+span{
+   font-size: small;
+}
+
+.centrado-vertical{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   vertical-align: bottom;
+}

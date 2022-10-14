@@ -1,0 +1,21 @@
+<div mat-dialog-content >
+   <div class="row">
+      <div class="col" style="text-align: center;">
+         <i [ngClass]=" { 'fa-check ok': !data.error, 'fa-times err': data.error }" class="fa faa-tada animated fa-4x"></i>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col mt-2 mensaje" style="text-align: center;">
+         <h1 mat-dialog-title>{{data.titulo}}</h1>
+      </div>
+   </div>
+
+   <div class="row">
+      <p class="ml-3 mr-3 mensaje" style="text-align: center;">{{data.mensaje}}</p>
+   </div>
+</div>
+<div mat-dialog-actions>
+   <div class="col" style="text-align: center;">
+      <button class="btn btn-valores" (click)="confirmado()">Aceptar</button>
+   </div>
+</div>

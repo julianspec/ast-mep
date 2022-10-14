@@ -1,0 +1,52 @@
+<mat-card class="my-2 mx-2 card card-deck" style="width: 99%;">
+	<mat-card-title>
+		<div class="row align-items-center">
+			<h5 class=" my-2 mx-3 encabezado"><i class="fa fa-dollar-sign mr-2"></i>Posicion Consolidada</h5>
+			<span class="spinner-grow spinner-grow-sm encabezado" role="status" *ngIf="loading" aria-hidden="true"></span>
+		</div>
+	</mat-card-title>
+	<mat-divider></mat-divider>
+	<mat-card-content class="py-4">
+		<div class="card-deck py-1">
+			<div class="card py-1 text-center" *ngFor="let cuenta of cuentas">
+
+				<div class="row">
+					<div class="card-body">
+						<h5 class="card-title encabezado"><i class="fa fa-coins mr-2"></i>{{cuenta.cuenta}} -
+							{{cuenta.descripcion}}</h5>
+						<hr>
+						<h1 class="card-text text-dark">
+							{{ cuenta.saldo.toString().trim().replace(",",".") | currency:"USD":cuenta.simbolo+' ' }}
+						</h1>
+
+						<h6 class="text-center text-info">
+							<span style="cursor:pointer">
+								<i (click)="consultaReserva(cuenta)" *appIsGranted="13" class="fa fa-search-dollar mr-1"
+									matTooltip="Click para ver detalle." aria-tooltip=""></i>
+							</span>
+							Reservado: {{ cuenta.saldoReservado.toString().trim().replace(",",".") |
+							currency:"USD":cuenta.simbolo+' ' }}
+
+						</h6>
+						<h6 class="text-center text-muted">Disponible Real: {{
+							cuenta.saldoDisponibleReal.toString().trim().replace(",",".") | currency:"USD":cuenta.simbolo+' '
+							}}</h6>
+						<hr>
+						<button type="button" class="btn btn-sm btn-valores my-1" (click)="consultaMovimientos(cuenta)"
+							*appIsGranted="100001">Ver movimientos</button>
+						<p class="card-text"><small class="text-muted">*Consultado: {{ cuenta.horaConsulta }} hs. </small>
+							<span style="cursor:pointer">
+								<i class="fa fa-sync-alt text-muted ml-2" matTooltip="Click para actualizar saldo."
+									aria-tooltip="" (click)="ConsultarSaldo(cuenta)"></i>
+							</span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<mat-card-content class="mt-2">
+			<app-tabla-saldo-cuenta></app-tabla-saldo-cuenta>
+		</mat-card-content>
+	</mat-card-content>
+</mat-card>

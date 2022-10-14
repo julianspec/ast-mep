@@ -1,0 +1,57 @@
+:host {
+	position: relative;
+	width: 100%;
+	display: block;
+	z-index: 5000;
+}
+
+#uw-service-error-viewer {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	padding: 20px;
+	.mat-icon {
+		color: #d5196b;
+		font-size: 30px;
+		height: auto;
+		width: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 5px;
+		background: transparent;
+		z-index: 50;
+		border-radius: 50px 50px 0 0;
+	}
+	.content {
+		background: #f8f8f8;
+		padding: 20px;
+		color: #d5196b;
+		font-size: 12px;
+		font-weight: bold;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 0 0 20px 0 #00000026;
+	}
+}
+
+#uw-service-error-viewer.warn {
+	.mat-icon {
+		color: #d58f19;
+	}
+	.content {
+		color: #d58f19;
+	}
+}
+
+#uw-service-error-viewer.error {
+	.mat-icon {
+		color: #d5196b;
+	}
+	.content {
+		color: #d5196b;
+	}
+}

@@ -1,0 +1,22 @@
+<div class="form-group row">
+   <div class="tags">
+      {{instruccion.tipoDato}}
+      {{instruccion.tag}}
+   </div>
+   <mat-form-field class="col-sm-12">
+      <mat-label>{{instruccion.nombre}}</mat-label>
+      <input OnlyNumber="true" matInput [formControl]="cbu" [(ngModel)]="valor" #input (blur)="EnviarValor()" (change)="EnviarValor()" [required]="requerido">
+      <mat-error *ngIf="cbu.hasError('required')">
+         El {{instruccion.nombre}} es un dato <strong>obligatorio</strong>
+      </mat-error>
+      <mat-error *ngIf="cbu.hasError('minlength')">
+         El campo no cumple con la cantidad mínima de {{instruccion.longitudMinima}} caracteres
+      </mat-error>
+      <mat-error *ngIf="cbu.hasError('maxlength')">
+         El campo no cumple con la cantidad máxima de {{instruccion.longitudMaxima}} caracteres
+      </mat-error>
+      <mat-hint style="color: orange;" *ngIf="cbu.hasError('invalidCBUAsync')">
+         <i class="fa fa-exclamation-triangle mr-1"></i>El CBU <strong>no fue validado por COELSA</strong>. Compruebe que haya ingresado el valor correctamente.
+      </mat-hint>
+   </mat-form-field>
+</div>

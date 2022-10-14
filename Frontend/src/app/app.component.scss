@@ -1,0 +1,20 @@
+@import '../styles/themes/main-palet.scss';
+
+:host {
+	display: flex;
+	align-items: stretch;
+	justify-content: stretch;
+	flex-direction: column;
+}
+
+.first-load {
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.router-container {
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}

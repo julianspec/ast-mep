@@ -1,0 +1,187 @@
+<div class="contenedor">
+   <div class="row">
+
+      <div class="col-sm-6">
+         <mat-form-field class="row-item grow ">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-6 text-right">
+         <div class="row float-right">
+            <!--div *ngIf="automaticas">
+               <span class="mt-1">Ver Automaticas: </span><mat-slide-toggle (change)="verAutomaticas($event.checked)" class="mr-3 mt-1"></mat-slide-toggle>
+            </div-->
+            <div *ngIf="this.selection.selected.length > 0">
+               <button id="btnRechazar" type="button" *appIsGranted="1012" class="btn btn-sm btn-valores mr-2" (click)="solicitarConfirmacionRechazar()" [disabled]="procesando"><i class="fa fa-times mr-2"></i>Rechazar</button>
+               <span *ngIf="this.selection.selected[0].usuarioAprueba == null">
+                  <button id="btnAprobar" type="button"  class="btn btn-sm btn-aprobar mr-2" (click)="solicitarConfirmacionAprobar()" [disabled]="procesando"><i class="fa fa-check mr-2"></i>Aprobar</button>
+               </span>
+               <span *ngIf="this.selection.selected[0].usuarioAprueba">
+                  <button id="btnEnviar" type="button"  class="btn btn-sm btn-aprobar mr-2" (click)="solicitarConfirmacionEnviar()" [disabled]="procesando"><i class="fa fa-paper-plane mr-2"></i>Enviar</button>
+               </span>
+            </div>
+            <div class="btn-group" role="group">
+               <button id="btnExportar" type="button" class="btn btn-sm btn-volver mr-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-download mr-2"></i>Exportar</button>
+               <div class="dropdown-menu" aria-labelledby="btnExportar">
+                  <a class="dropdown-item" (click)="generatePdf()"><i class="fa fa-file-pdf mr-2"></i>PDF</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="mat-elevation-z2 table tabla-container">
+
+
+      <table mat-table [dataSource]="dataSource" matSort>
+
+         <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef >
+               <mat-checkbox (change)="$event ? masterToggle() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()">
+               </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+               <mat-checkbox (click)="$event.stopPropagation()"
+                  (change)="$event ? selection.toggle(row) : null"
+                  [checked]="selection.isSelected(row)" class="table-check" >
+               </mat-checkbox>
+            </td>
+         </ng-container>
+
+         <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+            <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="operatoria">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+            <td mat-cell *matCellDef="let row" style="text-align: center;"> {{ row.codigoOperatoria }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="cliente">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Cliente </th>
+            <td mat-cell *matCellDef="let row"> {{row.nombreCliente }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="moneda" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Moneda </th>
+            <td mat-cell *matCellDef="let row" style="text-align: center;"> {{row.moneda }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="importe">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Importe </th>
+            <td mat-cell *matCellDef="let row" style="text-align: center;"> {{ row.importe.toString().trim().replace(",",".") | currency : (row.moneda==80?'$':'u$s')}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="entidadDeudora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Entidad Deudora </th>
+            <td mat-cell *matCellDef="let row" style="text-align: center;"> {{ row.codigoEntidadDeudora }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="cuentaDeudora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Cuenta Deudora </th>
+            <td mat-cell *matCellDef="let row" style="text-align: center;"> {{ row.codigoCuentaDeudora }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="entidadAcreedora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Entidad Acreedora </th>
+            <td mat-cell *matCellDef="let row" style="text-align: center;"> {{ row.codigoEntidadAcreedora}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="cuentaAcreedora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Cuenta Acreedora </th>
+            <td mat-cell *matCellDef="let row" style="text-align: center;"> {{ row.codigoCuentaAcreedora }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="usuarioAlta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Alta </th>
+            <td mat-cell *matCellDef="let row"> {{ row.usuarioAlta }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="fechaAlta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+            <td mat-cell *matCellDef="let row"> {{ (row.fechaAlta |date:'short') }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="usuarioEnvio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Envio </th>
+            <td mat-cell *matCellDef="let row"> {{ row.usuarioEnvio }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="fechaEnvio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+            <td mat-cell *matCellDef="let row"> {{ (row.fechaEnvio |date:'short') }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="usuarioAprueba">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Aprueba </th>
+            <td mat-cell *matCellDef="let row"> {{ row.usuarioAprueba }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="fechaAprueba">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+            <td mat-cell *matCellDef="let row"> {{ (row.fechaAprueba |date:'short') }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="usuarioRechaza">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Rechazo </th>
+            <td mat-cell *matCellDef="let row"> {{ row.usuarioRechaza }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="fechaRechaza">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+            <td mat-cell *matCellDef="let row"> {{ (row.fechaRechaza |date:'short') }} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+            <td mat-cell *matCellDef="let row" class="text-center" style="padding-left: 0px;">
+               <span (click)="verDetalle(row, tabIndex, fechaConsultada)" *appIsGranted="100002">
+                  <i [ngClass]=" { 'fa-exclamation-triangle agregar': (row.estadoCobis =='ERROR' || row.estadoBcra == 'ERROR' || row.estadoCobis == null || row.estadoBcra == null) && row.usuarioRechaza == null && row.usuarioAprueba != null,
+                                   'fa-check detalle': (row.estadoCobis =='OK' && row.estadoBcra == 'OK') && row.usuarioRechaza == null && row.usuarioAprueba != null,
+                                   'fa-times borrar': row.usuarioRechaza != null}"
+                     class="fa"
+                     matTooltip="Estado Cobis: {{row.estadoCobis}} - Estado BCRA: {{row.estadoBcra}}"
+                     aria-tooltip=""></i>
+               </span>
+
+            </td>
+         </ng-container>
+
+         <ng-container matColumnDef="detalle">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Detalle </th>
+            <td mat-cell *matCellDef="let row" class="text-center" style="padding-left: 0px;">
+               <span (click)="verDetalle(row, tabIndex, fechaConsultada)" *appIsGranted="100002">
+                  <i [ngClass]=" { 'fa-search modify': row.usuarioEnvio == null } "
+                     class="fa"
+                     matTooltip="Ver detalle de la operacion"
+                     aria-tooltip=""></i>
+               </span>
+
+            </td>
+         </ng-container>
+
+         <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
+            <td mat-cell *matCellDef="let row" class="text-center" style="padding-left: 0px;">
+               <span (click)="editDetalle(row, tabIndex, fechaConsultada)" *appIsGranted="100002">
+                  <i [ngClass]="'fa-pencil-alt modify'"
+                     class="fa"
+                     matTooltip="Completar datos de acreditación"
+                     aria-tooltip=""></i>
+               </span>
+
+            </td>
+         </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPaginateChange($event)"></mat-paginator>
+   </div>
+</div>

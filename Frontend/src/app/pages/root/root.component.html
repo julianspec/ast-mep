@@ -1,0 +1,26 @@
+<div class="Content">
+	<div class="loader">
+		<app-loading></app-loading>
+	</div>
+
+	<header class="top-bar">
+		<div class="nav-mainmenu-asaidecontent" *ngIf="mainMenuService.onMenuOpenMoveTopBar" [ngClass]="{ active: mainMenuService.menuIsActive }"></div>
+		<app-topbar [(showMenu)]="mainMenuService.menuIsActive" (onClickMenu)="onClickTopBarMenuBtn($event)" class="app-topbar"></app-topbar>
+	</header>
+
+	<div class="router-container">
+		<div class="nav-mainmenu-asaidecontent" *ngIf="mainMenuService.onMenuOpenMoveContent" [ngClass]="{ active: mainMenuService.menuIsActive }"></div>
+		<router-outlet></router-outlet>
+	</div>
+
+	<footer class="footer-bar">
+		<app-footerbar></app-footerbar>
+	</footer>
+
+	<nav class="nav-mainmenu" #navMainmenu [ngClass]="{ active: mainMenuService.menuIsActive }">
+		<div class="div-menu-bg" #navMainBG *ngIf="mainMenuService.onMenuOpenShowOverlayBg" (click)="onClickOverlay(navMainBG)"></div>
+		<div class="application-menu">
+			<app-main-menu></app-main-menu>
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,16 @@
+{
+	"retrieveNotifications": {
+		"200": {
+			"serverTime": "",
+			"success": true,
+			"message": {
+				"messageCode": "0000",
+				"message": "OK"
+			},
+			"data": {
+				"elements": [],
+				"totalElements": 0
+			}
+		}
+	}
+}

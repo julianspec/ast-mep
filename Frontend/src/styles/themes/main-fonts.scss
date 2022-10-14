@@ -1,0 +1,130 @@
+@import '~@angular/material/theming';
+/*#region Font Declarations ---------------*/
+//GILROY
+@font-face {
+	font-family: 'Gilroy-ExtraBold';
+	src: url('~/assets/fonts/Gilroy-ExtraBold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Gilroy-Light';
+	src: url('~/assets/fonts/Gilroy-Light.otf') format('opentype');
+}
+.font_gilroy_300 {
+	font-family: 'Gilroy-Light', 'Segoe UI', sans-serif;
+	font-weight: 300;
+}
+.font_gilroy_700 {
+	font-family: 'Gilroy-ExtraBold', 'Segoe UI', sans-serif;
+	font-weight: 400;
+}
+//NEXA
+@font-face {
+	font-family: 'NexaLight', 'Segoe UI', sans-serif;
+	src: url('~/assets/fonts/NexaLight.otf') format('opentype');
+}
+@font-face {
+	font-family: 'NexaBold', 'Segoe UI', sans-serif;
+	src: url('~/assets/fonts/NexaBold.otf') format('opentype');
+}
+.font_nexa_300 {
+	font-family: 'NexaLight', 'Segoe UI', sans-serif;
+	font-weight: 300;
+}
+.font_nexa_700 {
+	font-family: 'NexaBold', 'Segoe UI', sans-serif;
+	font-weight: 400;
+}
+
+//PRODUCT SANS
+@font-face {
+	font-family: 'ProductSans-Black';
+	src: url('~/assets/fonts/ProductSans-Black.ttf') format('opentype');
+}
+@font-face {
+	font-family: 'ProductSans-Light';
+	src: url('~/assets/fonts/ProductSans-Light.ttf') format('opentype');
+}
+@font-face {
+	font-family: 'ProductSans-Regular';
+	src: url('~/assets/fonts/ProductSans-Regular.ttf') format('opentype');
+}
+
+.font_productsans_300 {
+	font-family: 'ProductSans-Light', 'Segoe UI', sans-serif;
+	font-weight: 300;
+}
+.font_productsans_400 {
+	font-family: 'ProductSans-Regular', 'Segoe UI', sans-serif;
+	font-weight: 400;
+}
+.font_productsans_500 {
+	font-family: 'ProductSans-Black', 'Segoe UI', sans-serif;
+	font-weight: 500;
+}
+
+// Proxima-Nova
+@font-face {
+	font-family: 'ProximaNova-Black';
+	src: url('~/assets/fonts/proxima-nova-700.ttf') format('opentype');
+}
+@font-face {
+	font-family: 'ProximaNova-Light';
+	src: url('~/assets/fonts/proxima-nova-300.ttf') format('opentype');
+}
+@font-face {
+	font-family: 'ProximaNova-Regular';
+	src: url('~/assets/fonts/proxima-nova-400.ttf') format('opentype');
+}
+
+.font_proxima_300 {
+	font-family: 'ProximaNova-Light', 'Segoe UI', sans-serif;
+	font-weight: 300;
+}
+.font_proxima_400 {
+	font-family: 'ProximaNova-Regular', 'Segoe UI', sans-serif;
+	font-weight: 400;
+}
+.font_proxima_500 {
+	font-family: 'ProximaNova-Black', 'Segoe UI', sans-serif;
+	font-weight: 500;
+}
+
+/*#endregion Font Declaration ---------------*/
+
+$Gilroy-ExtraBold-TYPO: mat-typography-config(
+	$font-family: 'Gilroy-ExtraBold, Roboto, monospace'
+);
+
+$Gilroy-Light-TYPO: mat-typography-config(
+	$font-family: 'Gilroy-Light, Roboto, monospace'
+);
+
+$Proxima-Regular-TYPO: mat-typography-config(
+	$font-family: 'font_proxima_400, Segoe UI, sans-serif'
+);
+
+body {
+	font-family: mat-font-family($Gilroy-Light-TYPO);
+}
+
+h1,
+.mat-h1,
+.mat-headline,
+.mat-typography h1 {
+	font-family: mat-font-family($Gilroy-Light-TYPO);
+	font-weight: normal;
+	font-size: 26px;
+	margin: 0;
+	padding: 0;
+}
+
+h1 strong,
+.mat-h1 strong,
+.mat-headline strong,
+.mat-typography h1 strong {
+	font-family: mat-font-family($Gilroy-ExtraBold-TYPO);
+	font-weight: normal;
+	font-size: 26px;
+	margin: 0;
+	padding: 0;
+}

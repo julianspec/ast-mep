@@ -1,0 +1,59 @@
+.error{
+   border-left: 7px solid #DC3545;
+   background-color: white;
+   color: #DC3545;
+}
+
+.spinner-error{
+   color: #DC3545;
+}
+
+.reparacion{
+   border-left: 7px solid #6C757D;
+   background-color: white;
+   color: #6C757D;
+}
+
+.spinner-reparacion{
+   color: #6C757D;
+}
+
+.transmitida{
+   border-left: 7px solid #28A745;
+   background-color: white;
+   color: #28A745;
+}
+
+.spinner-transmitida{
+   color: #28A745;
+}
+
+.envio{
+   border-left: 7px solid #FFC107;
+   background-color: white;
+   color: #FFC107;
+}
+
+.spinner-envio{
+   color: #FFC107;
+}
+
+.aprobacion{
+   border-left: 7px solid #17A2B8;
+   background-color: white;
+   color: #17A2B8;
+}
+
+.spinner-aprobacion{
+   color: #17A2B8;
+}
+
+.rechazada{
+   border-left: 7px solid #343A40;
+   background-color: white;
+   color: #343A40;
+}
+
+.spinner-rechazada{
+   color: #343A40;
+}

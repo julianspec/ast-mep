@@ -1,0 +1,12 @@
+<div id="uw-service-error-viewer" [class.warn]="error.mode == 'warn'" [class.error]="error.mode == 'error'" *ngIf="error">
+	<mat-icon fontSet="material-icons-round">warning</mat-icon>
+
+	<div class="content">
+		<div *ngIf="error.texti18n">
+			<p *ngFor="let i18ntext of error.texti18n">{{ i18ntext | translate }}</p>
+		</div>
+		<div *ngIf="!error.texti18n">
+			<p *ngFor="let text of error.text">{{ text }}</p>
+		</div>
+	</div>
+</div>

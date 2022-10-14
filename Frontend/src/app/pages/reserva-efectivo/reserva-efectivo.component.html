@@ -1,0 +1,30 @@
+<mat-card class="my-2 mx-2 card card-deck" style="width: 99%;">
+   <mat-card-title>
+      <h5 class=" mx-2 my-2 encabezado">
+         <i class="fa fa-piggy-bank mr-2"></i>
+         Reserva de Efectivo
+         <span class="spinner-grow spinner-grow-sm encabezado ml-2" role="status" *ngIf="loading" aria-hidden="true"></span>
+      </h5>
+   </mat-card-title>
+   <mat-divider></mat-divider>
+   <mat-card-content class="mt-4">
+
+      <form [formGroup]="reservaForm">
+         <div class="form-group row ml-1">
+            <div class="col-sm-5">
+               <mat-form-field>
+                  <mat-label>Cuenta</mat-label>
+                  <mat-select  formControlName="cuentaSeleccion" [(ngModel)]="selectCuenta" (selectionChange)="buscarRegistros();">
+                     <mat-option></mat-option>
+                     <mat-option *ngFor="let c of cuentas" [value]="c">{{c.valor}}</mat-option>
+                  </mat-select>
+                  <mat-hint *ngIf="vacio">Seleccione una cuenta</mat-hint>
+               </mat-form-field>
+            </div>
+         </div>
+      </form>
+
+      <app-tabla-reserva-efectivo [registros]="registros" [displayColumns]="displayedColumns" (itemDeleted)="Eliminar($event)"></app-tabla-reserva-efectivo>
+   </mat-card-content>
+
+</mat-card>
